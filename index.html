@@ -22,6 +22,7 @@
   <div class="text-3xl font-extrabold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-rose-600 mb-4">Thread-Love</div>
   <div class="w-8 h-8 border-2 border-pink-500 border-t-transparent rounded-full animate-spin mb-6"></div>
   <p id="loading-msg" class="text-gray-500 text-xs">載入中...</p>
+  <button onclick="document.getElementById('loading-screen').classList.add('hidden');document.getElementById('login-screen').classList.remove('hidden')" class="mt-8 text-gray-600 text-xs underline cursor-pointer">載入太久？點這裡手動繼續</button>
 </div>
 
 <!-- ========== Login Screen ========== -->
@@ -268,7 +269,7 @@ window.signOut = async () => {
 const _loadingTimeout = setTimeout(() => {
   document.getElementById('loading-screen').classList.add('hidden');
   document.getElementById('login-screen').classList.remove('hidden');
-}, 5000);
+}, 3000);
 
 onAuthStateChanged(auth, async (user) => {
   clearTimeout(_loadingTimeout);
